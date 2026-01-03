@@ -52,7 +52,7 @@ Once both are running, open your browser and go to:
 
 ## Editor-Specific Tips
 
-### VS Code / Cursor
+### VS Code 
 1.  Open the root `weatherproject` folder.
 2.  Open the integrated terminal (`Ctrl + ~`).
 3.  Split the terminal (click the `+` or split icon).
