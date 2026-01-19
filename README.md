@@ -71,3 +71,56 @@ These editors might not have built-in terminals (or require plugins).
 3.  Open two separate windows/tabs of your terminal app.
 4.  Navigate to the project folder in both and follow the "Quick Start" steps.
  
+
+
+## Deployment
+
+### Frontend Deployment (Vercel)
+
+1.  Push your code to GitHub.
+2.  Go to [Vercel](https://vercel.com) and sign up with GitHub.
+3.  Click **Add New** > **Project**.
+4.  Select your weatherproject repository.
+5.  Configure the project:
+    *   **Root Directory**: Click 'Edit' and select client.
+    *   **Framework Preset**: Vite.
+    *   **Build Command**: 
+pm run build (default).
+    *   **Output Directory**: dist (default).
+6.  Click **Deploy**.
+
+### Backend Deployment (Render)
+
+1.  Go to [Render](https://render.com) and sign up.
+2.  Click **New +** > **Web Service**.
+3.  Connect your GitHub repository.
+4.  Configure the service:
+    *   **Root Directory**: server.
+    *   **Runtime**: Node.
+    *   **Build Command**: 
+pm install.
+    *   **Start Command**: 
+ode index.js.
+5.  **Environment Variables**:
+    *   Add MONGO_URI and any other secrets from your .env file.
+6.  Click **Create Web Service**.
+
+*Note: The free tier on Render spins down after inactivity, so the first request might be slow.*
+
+### Local Production Build
+
+To run the optimized production build locally:
+
+**Client:**
+\\\ash
+cd client
+npm run build
+npm run preview
+\\\
+
+**Server:**
+\\\ash
+cd server
+npm start
+\\\
+
