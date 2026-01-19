@@ -49,6 +49,11 @@ app.use((req, res, next) => {
 app.use('/api/weather', weatherRoutes);
 app.use('/api/auth', authRoutes);
 
+// Health Check Route
+app.get('/api/health', (req, res) => {
+    res.status(200).json({ status: 'ok', message: 'Server is running' });
+});
+
 app.get('/', (req, res) => {
     res.send('Weather API (Open-Meteo) is running with Socket.IO & Sessions');
 });
