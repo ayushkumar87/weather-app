@@ -23,7 +23,11 @@ const server = http.createServer(app);
 
 // Middlewares (Unit III)
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        callback(null, true);
+    },
     credentials: true
 }));
 app.use(express.json()); // body-parser
